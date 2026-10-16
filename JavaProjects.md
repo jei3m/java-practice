@@ -145,6 +145,44 @@ Choose an Operation: [1] Addition [2] Subtraction [3] Multiply [4] Divide
 Result: 10 + 5 = 15
 ```
 
+## **5.5 While Loop Basics (Needed for Project 6)**
+
+- A **while loop** repeats a block of code as long as its condition stays `true`.
+- To make a program keep running until the user stops it, use a `boolean` flag.
+- The `Hands6.java` example below shows the exact continue-prompt pattern you will reuse in Project 6.
+
+**Code:**
+```java
+import java.util.Scanner;
+
+public class Hands6 {
+    public static void main(String[] args) {
+        Scanner scn = new Scanner(System.in);
+        boolean isContinue = true;
+
+        while (isContinue) {
+            System.out.print("Do you want to continue using the calculator? [1] Yes [2] No: ");
+            isContinue = (scn.nextInt() == 1) ? true : false;
+        }
+
+        System.out.println("Thank you for using the calculator!");
+        scn.close();
+    }
+}
+```
+
+**Breakdown:**
+- `boolean isContinue = true;` → the loop control flag (starts the loop).
+- `while (isContinue)` → keeps running while the flag is `true`.
+- `isContinue = (scn.nextInt() == 1) ? true : false;` → ternary updates the flag from user input.
+- When the user enters `2`, the flag becomes `false` and the loop exits.
+
+**Expected Input/Output:**
+```
+Do you want to continue using the calculator? [1] Yes [2] No: 2
+Thank you for using the calculator!
+```
+
 ## **6. Enhanced Simple Arithmetic Calculator (with While Loop)**
 - [Input] Two numbers (num1 and num2), an operation choice (1, 2, 3, or 4), and a choice to continue (1 = Yes, 2 = No)
 - Calculates the following:
