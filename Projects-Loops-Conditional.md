@@ -255,7 +255,7 @@ Guess: 7
 Correct!
 ```
 
-**Code:**
+<!-- **Code:**
 
 ```java
 import java.util.Scanner;
@@ -282,4 +282,4 @@ public class GuessNumber {
         System.out.println("Correct!");
     }
 }
-```
+``` -->
