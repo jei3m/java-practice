@@ -84,32 +84,25 @@ Total:         637.5
 
 ---
 
-## **4. Electricity Bill Calculator**
+## 4. Electricity Bill Calculator
 
 **Inputs:**
 - Customer name
 - Previous meter reading
 - Current meter reading
 - Rate per kWh
-- Fixed charge
 
 **Calculations:**
 
-| Item | Condition | Formula | Example (prev = 1200, curr = 1450, rate = 12.5, fixed = 100) |
-|------|-----------|---------|-------------------------------------------------------------|
-| **Consumption** | Always | `Current Reading − Previous Reading` | `1450 − 1200 = 250 kWh` |
-| **Energy Charge** | Always | `Consumption × Rate per kWh` | `250 × 12.5 = 3125.00` |
-| **Subtotal** | Always | `Energy Charge + Fixed Charge` | `3125 + 100 = 3225.00` |
-| **VAT** | Always | `Subtotal × 0.12` | `3225 × 0.12 = 387.00` |
-| **Total Bill** | Always | `Subtotal + VAT` | `3225 + 387 = 3612.00` |
+| Item | Formula | Example (prev = 1200, curr = 1450, rate = 12.5) |
+|------|---------|--------------------------------------------------|
+| **Consumption** | `Current Reading − Previous Reading` | `1450 − 1200 = 250 kWh` |
+| **Total Bill** | `Consumption × Rate per kWh` | `250 × 12.5 = 3125.00` |
 
 **Step-by-step for the sample input:**
 
 1. **Consumption** = `1450 − 1200` = `250 kWh`
-2. **Energy Charge** = `250 × 12.5` = `3125.00`
-3. **Subtotal** = `3125 + 100` = `3225.00`
-4. **VAT (12%)** = `3225 × 0.12` = `387.00`
-5. **Total Bill** = `3225 + 387` = `3612.00`
+2. **Total Bill** = `250 × 12.5` = `3125.00`
 
 **Expected Output:**
 ```
@@ -118,49 +111,37 @@ Enter customer name: Pedro
 Enter previous reading: 1200
 Enter current reading: 1450
 Enter rate per kWh: 12.5
-Enter fixed charge: 100
 
 --- Electric Bill ---
-Customer:       Pedro
-Consumption:    250 kWh
-Energy Charge:  3125.0
-Fixed Charge:   100.0
-VAT (12%):      387.0
-Total Bill:     3612.0
+Customer:      Pedro
+Consumption:   250 kWh
+Total Bill:    3125.00
 ```
 
 ---
 
-## **5. Gym Membership Fee Calculator**
+## 5. Gym Membership Fee Calculator
 
 **Inputs:**
 - Member name
 - Membership plan (1 = Monthly, 2 = Quarterly, 3 = Annual)
 - Number of personal training sessions
-- Trainer tier (1 = Basic, 2 = Premium)
 
 **Calculations:**
 
-| Item | Condition | Formula / Rate | Example (plan = 2, sessions = 8, tier = 2) |
-|------|-----------|----------------|--------------------------------------------|
+| Item | Condition | Formula / Rate | Example (plan = 2, sessions = 8) |
+|------|-----------|----------------|----------------------------------|
 | **Plan Cost** | Plan 1 = Monthly | Fixed `1500.00` | — |
 | | Plan 2 = Quarterly | Fixed `4500.00` | `4500.00` |
 | | Plan 3 = Annual | Fixed `15000.00` | — |
-| **Session Rate** | Tier 1 = Basic | Fixed `500.00` per session | — |
-| | Tier 2 = Premium | Fixed `800.00` per session | `800.00` |
-| **Training Cost** | Always | `Sessions × Session Rate` | `8 × 800 = 6400.00` |
-| **Subtotal** | Always | `Plan Cost + Training Cost` | `4500 + 6400 = 10900.00` |
-| **Loyalty Discount** | Annual plan (3) **OR** 5+ sessions | `Subtotal × 0.05` | `10900 × 0.05 = 545.00` |
-| **Total Fee** | Always | `Subtotal − Loyalty Discount` | `10900 − 545 = 10355.00` |
+| **Training Cost** | Always | `Sessions × 500.00` | `8 × 500 = 4000.00` |
+| **Total Fee** | Always | `Plan Cost + Training Cost` | `4500 + 4000 = 8500.00` |
 
-**Step-by-step for the sample input (Quarterly, 8 sessions, Premium):**
+**Step-by-step for the sample input (Quarterly, 8 sessions):**
 
 1. **Plan Cost** → Quarterly = `4500.00`
-2. **Session Rate** → Premium = `800.00` per session
-3. **Training Cost** = `8 × 800` = `6400.00`
-4. **Subtotal** = `4500 + 6400` = `10900.00`
-5. **Loyalty Discount** → 8 sessions ≥ 5 → `10900 × 0.05` = `545.00`
-6. **Total Fee** = `10900 − 545` = `10355.00`
+2. **Training Cost** = `8 × 500` = `4000.00`
+3. **Total Fee** = `4500 + 4000` = `8500.00`
 
 **Expected Output:**
 ```
@@ -168,15 +149,12 @@ Total Bill:     3612.0
 Enter member name: Carlo
 Membership plan [1] Monthly [2] Quarterly [3] Annual: 2
 Enter personal training sessions: 8
-Trainer tier [1] Basic [2] Premium: 2
 
 --- Membership Summary ---
-Member:           Carlo
-Plan Cost:        4500.0
-Training Cost:    6400.0
-Subtotal:         10900.0
-Loyalty Discount: 545.0
-Total Fee:        10355.0
+Member:         Carlo
+Plan Cost:      4500.00
+Training Cost:  4000.00
+Total Fee:      8500.00
 ```
 
 ---
