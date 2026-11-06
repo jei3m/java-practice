@@ -1,6 +1,8 @@
-## 1. Restaurant Bill Splitter
+## 1. Restaurant Bill Splitter - Java Guide
 
-**Inputs:** Number of people, Bill amount only
+**Inputs**:
+- Number of people
+- Bill amount
 
 **Sample Output:**
 ```
@@ -9,8 +11,12 @@ Enter number of people: 4
 Enter bill amount: 1200
 
 --- Receipt ---
-Total Bill:   1200.00
-Per Person:   300.00
+Base Bill: 1200.00
+VAT (12%): 144.00
+Service (10%): 120.00
+-----------------------------
+Total Bill: 1464.00
+Per Person: 366.00
 ```
 
 ---
