@@ -13,7 +13,7 @@ Enter bill amount: 1200
 --- Receipt ---
 Base Bill: 1200.00
 VAT (12%): 144.00
-Service (10%): 120.00
+Service Charge (10%): 120.00
 -----------------------------
 Total Bill: 1464.00
 Per Person: 366.00
