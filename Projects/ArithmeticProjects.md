@@ -3,7 +3,7 @@
 **Inputs**:
 - Number of people
 - Bill amount
-- Tip percentage
+- Tip percentage (in percentage)
 
 **Sample Output:**
 ```
