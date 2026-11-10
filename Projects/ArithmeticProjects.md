@@ -3,29 +3,59 @@
 **Inputs**:
 - Number of people
 - Bill amount
+- Tip percentage
 
 **Sample Output:**
 ```
 === Restaurant Bill Splitter ===
 Enter number of people: 4
 Enter bill amount: 1200
+Enter tip percentage: 5
 
 --- Receipt ---
 Base Bill: 1200.00
 VAT (12%): 144.00
-Service (10%): 120.00
+Service Charge (10%): 120.00
+Tip (5%): 60.00
 -----------------------------
-Total Bill: 1464.00
-Per Person: 366.00
+Total Bill: 1524.00
+Per Person: 381.00
 ```
-
----
 
 ## 2. Simple Payroll System
 
 **Inputs:** Employee name, Daily rate, Days worked, Overtime hours, Overtime rate per hour
 
-**Expected Output:**
+**Note:**
+Since there is no computation for tax, the system **only allows non-taxable salaries**. The current non-taxable threshold in the Philippines is **₱250,000 annual taxable income** (equivalent to **₱20,833 per month**) under the TRAIN Law..
+
+**Calculations:**
+- Basic Pay = Daily rate × Days worked
+- Overtime Pay = Overtime hours × Overtime rate per hour
+- Gross Pay = Basic Pay + Overtime Pay
+- PhilHealth = 4% of Gross Pay
+- SSS = 4.5% of Gross Pay
+- Pag-IBIG = 2% of Gross Pay
+- Total Contributions = PhilHealth + SSS + Pag-IBIG
+- Taxable Income = Gross Pay − Total Contributions
+- Net Pay = Gross Pay − Total Contributions
+
+**Validation:**
+Before printing the payslip, the program must validate the computed values. If any of the following limits is exceeded, the program **stops and exits immediately** without printing a payslip.
+
+- **Max Daily Rate**: ₱1,041.65
+- **Max Days Worked**: 20 days
+- **Max Taxable Salary**: ₱20,833.00 (monthly non-taxable threshold)
+
+**Validation Messages:**
+- If Daily Rate exceeds ₱1,041.65:
+  `ERROR: Daily rate exceeds the maximum non-taxable daily rate of ₱1,041.65. This system does not compute tax. Program terminated.`
+- If Days Worked exceeds 20:
+  `ERROR: Days worked exceeds the maximum of 20 days for a non-taxable salary. This system does not compute tax. Program terminated.`
+- If Taxable Income exceeds ₱20,833.00:
+  `ERROR: Taxable income exceeds the ₱20,833 monthly non-taxable threshold. This system does not compute tax. Program terminated.`
+
+**Expected Output (Non-Taxable Salary, program continues):**
 ```
 === Simple Payroll System ===
 Enter employee name: Juan
@@ -35,10 +65,28 @@ Enter overtime hours: 5
 Enter overtime rate per hour: 100
 
 --- Payslip ---
-Employee:      Juan
-Basic Pay:     10000.00
-Overtime Pay:  500.00
-Gross Pay:     10500.00
+Employee:           Juan
+Basic Pay:          10000.00
+Overtime Pay:       500.00
+Gross Pay:          10500.00
+PhilHealth (4%):    420.00
+SSS (4.5%):         472.50
+Pag-IBIG (2%):      210.00
+---------------------------------
+Total Contributions: 1102.50
+Net Pay:            9397.50
+```
+
+**Expected Output (Taxable Salary, program stops, no payslip):**
+```
+=== Simple Payroll System ===
+Enter employee name: Maria
+Enter daily rate: 1500
+Enter days worked: 25
+Enter overtime hours: 10
+Enter overtime rate per hour: 200
+
+ERROR: Daily rate exceeds the maximum non-taxable daily rate of ₱1,041.65. This system does not compute tax. Program terminated.
 ```
 
 ---
