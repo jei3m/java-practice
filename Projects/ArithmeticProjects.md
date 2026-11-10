@@ -37,7 +37,6 @@ Since there is no computation for tax, the system **only allows non-taxable sala
 - SSS = 4.5% of Gross Pay
 - Pag-IBIG = 2% of Gross Pay
 - Total Contributions = PhilHealth + SSS + Pag-IBIG
-- Taxable Income = Gross Pay − Total Contributions
 - Net Pay = Gross Pay − Total Contributions
 
 **Validation:**
