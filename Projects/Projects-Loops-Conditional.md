@@ -19,20 +19,6 @@
 10
 ```
 
-**Code:**
-
-```java
-public class NumbersOneToTen {
-    public static void main(String[] args) {
-        System.out.println("--- Numbers 1 to 10 ---");
-
-        for (int i = 1; i <= 10; i++) {
-            System.out.println(i);
-        }
-    }
-}
-```
-
 ---
 
 ## **2. Print Numbers 1 to N (FOR loop)**
@@ -52,27 +38,6 @@ Enter N: 5
 5
 ```
 
-**Code:**
-
-```java
-import java.util.Scanner;
-
-public class NumbersOneToN {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-
-        System.out.print("Enter N: ");
-        int n = sc.nextInt();
-
-        System.out.println("--- Numbers 1 to N ---");
-
-        for (int i = 1; i <= n; i++) {
-            System.out.println(i);
-        }
-    }
-}
-```
-
 ---
 
 ## **3. Print Even Numbers Only (FOR loop + IF)**
@@ -90,29 +55,6 @@ Enter N: 10
 6
 8
 10
-```
-
-**Code:**
-
-```java
-import java.util.Scanner;
-
-public class EvenNumbers {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-
-        System.out.print("Enter N: ");
-        int n = sc.nextInt();
-
-        System.out.println("--- Even Numbers ---");
-
-        for (int i = 1; i <= n; i++) {
-            if (i % 2 == 0) {
-                System.out.println(i);
-            }
-        }
-    }
-}
 ```
 
 ---
@@ -135,29 +77,6 @@ Enter starting number: 5
 Blast off!
 ```
 
-**Code:**
-
-```java
-import java.util.Scanner;
-
-public class Countdown {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-
-        System.out.print("Enter starting number: ");
-        int start = sc.nextInt();
-
-        System.out.println("--- Countdown ---");
-
-        for (int i = start; i > 0; i--) {
-            System.out.println(i);
-        }
-
-        System.out.println("Blast off!");
-    }
-}
-```
-
 ---
 
 ## **5. Keep Asking Until "yes" (WHILE loop)**
@@ -175,28 +94,6 @@ Do you want to continue? (yes/no): yes
 Thank you!
 ```
 
-**Code:**
-
-```java
-import java.util.Scanner;
-
-public class AskUntilYes {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int answer = 1;
-
-        System.out.println("--- Ask Until Yes ---");
-
-        while (answer != 1) {
-            System.out.print("Do you want to continue? [1] Yes [2] No: ");
-            answer = sc.next();
-        }
-
-        System.out.println("Thank you!");
-    }
-}
-```
-
 ---
 
 ## **6. Sum of Numbers 1 to N (FOR loop)**
@@ -210,29 +107,6 @@ public class AskUntilYes {
 --- Sum Calculator ---
 Enter N: 5
 Sum: 15
-```
-
-**Code:**
-
-```java
-import java.util.Scanner;
-
-public class SumToN {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-
-        System.out.print("Enter N: ");
-        int n = sc.nextInt();
-
-        int sum = 0;
-        for (int i = 1; i <= n; i++) {
-            sum += i;
-        }
-
-        System.out.println("--- Sum Calculator ---");
-        System.out.println("Sum: " + sum);
-    }
-}
 ```
 
 ---
@@ -254,32 +128,3 @@ Too low!
 Guess: 7
 Correct!
 ```
-
-<!-- **Code:**
-
-```java
-import java.util.Scanner;
-
-public class GuessNumber {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int secret = 7;
-        int guess = 0;
-
-        System.out.println("--- Guess the Number ---");
-
-        while (guess != secret) {
-            System.out.print("Guess: ");
-            guess = sc.nextInt();
-
-            if (guess > secret) {
-                System.out.println("Too high!");
-            } else if (guess < secret) {
-                System.out.println("Too low!");
-            }
-        }
-
-        System.out.println("Correct!");
-    }
-}
-``` -->
