@@ -79,18 +79,18 @@ Blast off!
 
 ---
 
-## **5. Keep Asking Until "yes" (WHILE loop)**
+## **5. Keep Asking Until "no" (WHILE loop)**
 
 - Ask the user: "Do you want to continue? (yes/no)"
-- Keep asking **while** the answer is NOT "yes"
+- Keep asking **while** the answer is NOT "no"
 
 **Expected Output:**
 
 ```
 --- Ask Until Yes ---
-Do you want to continue? (yes/no): no
-Do you want to continue? (yes/no): maybe
 Do you want to continue? (yes/no): yes
+Do you want to continue? (yes/no): maybe
+Do you want to continue? (yes/no): no
 Thank you!
 ```
 
